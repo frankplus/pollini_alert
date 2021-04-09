@@ -62,7 +62,7 @@ def main(blocking = True):
     dispatcher.add_handler(PrefixHandler(['!', '#', '/'], 'subscribe', subscribe))
     dispatcher.add_handler(PrefixHandler(['!', '#', '/'], 'unsubscribe', unsubscribe))
 
-    updater.job_queue.run_daily(send_plot_to_subscribers, time(9))
+    updater.job_queue.run_daily(send_plot_to_subscribers, time(hour=8))
 
     # Start the Bot
     updater.start_polling()
